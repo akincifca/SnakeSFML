@@ -1,10 +1,9 @@
 #include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML works!");
 
     while (window.isOpen())
     {
@@ -16,7 +15,6 @@ int main()
         }
 
         window.clear();
-        window.draw(shape);
         window.display();
     }
 
