@@ -8,6 +8,11 @@ void Engine::StateMng::Add(std::unique_ptr<State> state) {
         }
     }
     stateStack_.push(std::move(state));
+    stateStack_.top()->Init();
+    auto pausable = dynamic_cast<PausableState*>(state.get());
+    if(pausable) {
+        pausable->Start();
+    }
 }
 
 void Engine::StateMng::Replace(std::unique_ptr<State> state) {
@@ -15,6 +20,11 @@ void Engine::StateMng::Replace(std::unique_ptr<State> state) {
         stateStack_.pop();
     }
     stateStack_.push(std::move(state));
+    stateStack_.top()->Init();
+    auto pausable = dynamic_cast<PausableState*>(state.get());
+    if(pausable) {
+        pausable->Start();
+    }
 }
 
 void Engine::StateMng::Remove() {
