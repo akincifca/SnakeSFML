@@ -10,5 +10,7 @@ add_executable(snakegame
         State.h
         StateMng.h
         StateMng.cpp
+        AssetMng.cpp
+        AssetMng.h
         )
 target_link_libraries(snakegame sfml-graphics sfml-window sfml-system)
