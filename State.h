@@ -1,4 +1,3 @@
-
 #ifndef SNAKEGAME_STATE_H
 #define SNAKEGAME_STATE_H
 
@@ -17,6 +16,7 @@ public:
 };
 
 class PausableState : public State {
+public:
     virtual ~PausableState() {}
 
     virtual void Pause() = 0;

@@ -8,5 +8,7 @@ find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)
 add_executable(snakegame
         main.cpp
         State.h
+        StateMng.h
+        StateMng.cpp
         )
 target_link_libraries(snakegame sfml-graphics sfml-window sfml-system)
