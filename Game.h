@@ -8,6 +8,10 @@
 #include "AssetMng.h"
 #include "StateMng.h"
 
+enum AssetId {
+    MAIN_MENU = 0,
+};
+
 struct Context {
     std::unique_ptr<Engine::AssetMng> assets;
     std::unique_ptr<Engine::StateMng> states;

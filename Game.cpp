@@ -2,10 +2,11 @@
 #include <SFML/Graphics.hpp>
 
 #include "Game.h"
+#include "MainMenu.h"
 
 Game::Game() : context_(std::make_shared<Context>()) {
-    context_->window->create(sf::VideoMode(640, 352), "Snake Game", sf::Style::Close);
-    // context_->states->Add(std::make_unique<MainMenu>(m_context));
+    context_->window->create(sf::VideoMode(1920, 1080), "Snake Game", sf::Style::Close);
+    context_->states->Add(std::make_unique<MainMenu>(context_));
 }
 
 void Game::Run() {
@@ -23,16 +24,9 @@ void Game::Run() {
         {
             timeSinceLastFrame -= timePerFrame_;
 
-            sf::Event event;
-            while(context_->window->pollEvent(event)) {
-                if(event.type == sf::Event::Closed) {
-                    context_->window->close();
-                }
-            }
-
-            context_->window->clear();
-            context_->window->draw(shape);
-            context_->window->display();
+            context_->states->GetCurrent()->ProcessInput();
+            context_->states->GetCurrent()->Update(timePerFrame_);
+            context_->states->GetCurrent()->Draw();
         }
     }
 }
