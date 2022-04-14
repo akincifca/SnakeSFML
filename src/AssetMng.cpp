@@ -1,5 +1,5 @@
 
-#include "AssetMng.h"
+#include "../include/AssetMng.h"
 
 void Engine::AssetMng::AddTexture(int id, const std::string& path, bool repeated) {
     auto texture = std::make_unique<sf::Texture>();

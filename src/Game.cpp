@@ -1,8 +1,8 @@
 #include <SFML/Graphics/CircleShape.hpp>
 #include <SFML/Graphics.hpp>
 
-#include "Game.h"
-#include "MainMenu.h"
+#include "../include/Game.h"
+#include "../include/MainMenu.h"
 
 Game::Game() : context_(std::make_shared<Context>()) {
     context_->window->create(sf::VideoMode(1920, 1080), "Snake Game", sf::Style::Close);

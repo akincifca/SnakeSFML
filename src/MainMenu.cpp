@@ -1,6 +1,6 @@
 #include <SFML/Window/Event.hpp>
 
-#include "MainMenu.h"
+#include "../include/MainMenu.h"
 
 MainMenu::MainMenu(std::shared_ptr<Context>& context) : context_(context){
 
