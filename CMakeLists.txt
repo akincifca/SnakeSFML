@@ -5,16 +5,19 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS -Wall)
 
 find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)
-add_executable(snakegame
-        main.cpp
+set(HEADERS
         include/State.h
         include/StateMng.h
+        include/AssetMng.h
+        include/MainMenu.h
+        include/Game.h
+        )
+set(SOURCES
+        main.cpp
         src/StateMng.cpp
         src/AssetMng.cpp
-        include/AssetMng.h
         src/Game.cpp
-        include/Game.h
         src/MainMenu.cpp
-        include/MainMenu.h
         )
+add_executable(snakegame ${HEADERS} ${SOURCES})
 target_link_libraries(snakegame sfml-graphics sfml-window sfml-system)
