@@ -20,6 +20,14 @@ public:
 private:
     std::shared_ptr<Context> context_;
     sf::Text gameTitle_;
+    sf::Text playButton_;
+    sf::Text exitButton_ ;
+
+    bool m_isPlayButtonSelected;
+    bool m_isPlayButtonPressed;
+
+    bool m_isExitButtonSelected;
+    bool m_isExitButtonPressed;
 };
 
 #endif //SNAKEGAME_MAINMENU_H

@@ -13,14 +13,9 @@ public:
     virtual void ProcessInput() = 0;
     virtual void Update(sf::Time deltaTime) = 0;
     virtual void Draw() = 0;
-};
 
-class PausableState : public State {
-public:
-    virtual ~PausableState() {}
-
-    virtual void Pause() = 0;
-    virtual void Start() = 0;
+    virtual void Start() {}
+    virtual void Pause() {}
 };
 
 }
