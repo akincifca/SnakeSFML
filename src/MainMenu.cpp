@@ -1,6 +1,7 @@
 #include <SFML/Window/Event.hpp>
 
 #include "../include/MainMenu.h"
+#include "../include/GamePlay.h"
 
 MainMenu::MainMenu(std::shared_ptr<Context>& context) : context_(context), m_isPlayButtonSelected(true),
                                                         m_isPlayButtonPressed(false), m_isExitButtonSelected(false),
@@ -106,7 +107,7 @@ void MainMenu::Update(sf::Time deltaTime) {
 
     if(m_isPlayButtonPressed)
     {
-        //context_->states->Add(std::make_unique<GamePlay>(m_context), true);
+        context_->states->Replace(std::make_unique<GamePlay>(context_));
     }
     else if(m_isExitButtonPressed)
     {

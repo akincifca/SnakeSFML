@@ -10,6 +10,10 @@
 
 enum AssetId {
     MAIN_MENU = 0,
+    GRASS,
+    FOOD,
+    WALL,
+    SNAKE
 };
 
 struct Context {
