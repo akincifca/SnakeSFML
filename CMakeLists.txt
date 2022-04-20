@@ -12,6 +12,7 @@ set(HEADERS
         include/MainMenu.h
         include/Game.h
         include/GamePlay.h
+        include/Snake.h
         )
 set(SOURCES
         main.cpp
@@ -20,6 +21,7 @@ set(SOURCES
         src/Game.cpp
         src/MainMenu.cpp
         src/GamePlay.cpp
+        src/Snake.cpp
         )
 add_executable(snakegame ${HEADERS} ${SOURCES})
 target_link_libraries(snakegame sfml-graphics sfml-window sfml-system)

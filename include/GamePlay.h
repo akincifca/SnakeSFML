@@ -8,6 +8,7 @@
 
 #include "Game.h"
 #include "State.h"
+#include "Snake.h"
 
 class GamePlay : public Engine::State {
 public:
@@ -25,6 +26,9 @@ private:
     sf::Sprite grass_;
     sf::Sprite food_;
     std::array<sf::Sprite, 4> walls_;
+    Snake snake_;
+    sf::Vector2f snakeDirection_;
+    sf::Time elapsedTime_;
 };
 
 #endif //SNAKEGAME_GAMEPLAY_H
